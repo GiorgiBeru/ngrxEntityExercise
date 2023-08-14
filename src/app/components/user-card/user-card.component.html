@@ -1,0 +1,7 @@
+<div class="card" (click)="selectedUser.emit(employee)">
+    <p>id: {{employee?.id || 'not applicable'}}</p>
+    <p>userId: {{employee?.userId || 'not applicable'}}</p>
+    <p>username: {{employee?.username || 'not applicable'}}</p>
+    <p>email: {{employee?.email || 'not applicable'}}</p>
+    <p>password: {{employee?.password || 'not applicable'}}</p>
+</div>

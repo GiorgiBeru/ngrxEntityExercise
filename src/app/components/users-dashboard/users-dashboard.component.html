@@ -1,0 +1,23 @@
+<div class="actions-container">
+    <div class="adders">
+        <button (click)="addOneUser()" role="button" class="button green"> Add One </button>
+        <button (click)="updateOneUser()" role="button" class="button green"> Add Many </button>
+        <button (click)="updateOneUser()" role="button" class="button green"> Add All </button>
+    </div>
+    <div class="removers">
+        <button (click)="updateOneUser()" role="button" class="button red"> remove One </button>
+        <button (click)="updateOneUser()" role="button" class="button red"> remove Many </button>
+        <button (click)="updateOneUser()" role="button" class="button red"> remove All </button>
+    </div>
+    <div class="updaters">
+        <button (click)="updateOneUser()" role="button" class="button yellow"> update One </button>
+        <button (click)="updateOneUser()" role="button" class="button yellow"> update Many </button>
+        <button (click)="updateOneUser()" role="button" class="button yellow"> upsert one </button>
+        <button (click)="updateOneUser()" role="button" class="button yellow"> upsert many </button>
+    </div>
+  </div>
+  <div class="cards-container">
+      <app-user-card *ngFor="let employee of employees" [employee]="employee" (selectedUser)="handleSelectedUser($event)"></app-user-card>
+  </div>
+  
+  

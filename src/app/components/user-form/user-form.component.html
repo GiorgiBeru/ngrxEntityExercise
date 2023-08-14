@@ -1,0 +1,19 @@
+<div class="form-container">
+    <app-user-card [employee]="selectedUser"></app-user-card>
+
+    <form [formGroup]="userForm"  (ngSubmit)="onSubmit()">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" formControlName="userId" [autocomplete]="false" name="bla"/>
+      
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username"  [autocomplete]="false" name="bla1" />
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email"  [autocomplete]="false" name="bla2"/>
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password"  [autocomplete]="false" name="bla3"/>
+      
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</div>
