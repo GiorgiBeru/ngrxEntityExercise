@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class UsersControllerService {
   constructor(private http: HttpClient) {}
 
   public getAllUsers() {
-    this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl);
   }
   public getOneUser() {
     this.http.get(`${this.baseUrl}/1`);

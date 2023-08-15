@@ -12,10 +12,26 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UsersDashboardComponent } from './components/users-dashboard/users-dashboard.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { EffectsModule } from '@ngrx/effects';
+import { userEffects } from './store/effects';
+import { usersReducer } from './store/reducer';
 
 @NgModule({
-  declarations: [AppComponent, UserCardComponent, UsersDashboardComponent, UserFormComponent],
-  imports: [BrowserModule, AppRoutingModule, CommonModule, HttpClientModule, RouterModule, ReactiveFormsModule, StoreModule.forRoot({}, {}), EffectsModule.forRoot([])],
+  declarations: [
+    AppComponent,
+    UserCardComponent,
+    UsersDashboardComponent,
+    UserFormComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({user: usersReducer}),
+    EffectsModule.forRoot([userEffects]),
+  ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })

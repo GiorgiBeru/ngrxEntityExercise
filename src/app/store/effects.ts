@@ -23,4 +23,15 @@ export class userEffects {
       })
     );
   });
+  loadUsers$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.loadUsers),
+      mergeMap(() => {
+        return this.userService.getAllUsers().pipe(
+          map((users: User[]) => userActions.loadUsersSuccess({users})),
+          catchError(() => of(userActions.loadUsersFailure()))
+        );
+      })
+    );
+  });
 }

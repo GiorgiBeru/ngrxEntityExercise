@@ -3,7 +3,9 @@ import { Update, EntityMap, EntityMapOne, Predicate } from '@ngrx/entity';
 
 import { User } from '../models/user.model';
 
-export const loadUsers = createAction('[User/API] Load Users', props<{ users: User[] }>());
+export const loadUsers = createAction('[User/API] Load Users');
+export const loadUsersSuccess = createAction('[User/API] Load Users Success', props<{ users: User[] }>());
+export const loadUsersFailure = createAction('[User/API] Load Users Failure');
 export const setUsers = createAction('[User/API] Set Users', props<{ users: User[] }>());
 export const addUser = createAction('[User/API] Add User', props<{ user: User }>());
 export const addUserSuccess = createAction('[User/API] Add User Success', props<{ user: User }>());
