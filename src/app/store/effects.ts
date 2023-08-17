@@ -34,6 +34,61 @@ export class userEffects {
       })
     );
   });
+  setUser$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.setUser),
+      mergeMap((action) => {
+        return this.userService.setUser(action.user).pipe(
+          map((user: User) => userActions.setUserSuccess({user})),
+          catchError(() => of(userActions.setUserFailure()))
+        );
+      })
+    );
+  });
+  deleteUsers$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.deleteUsers),
+      mergeMap((action) => {
+        return this.userService.deleteUsers(action.ids).pipe(
+          map(() => userActions.deleteUsersSuccess({ids: action.ids})),
+          catchError(() => of(userActions.deleteUsersFailure()))
+        );
+      })
+    );
+  });
+  deleteAll$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.deleteAll),
+      mergeMap((action) => {
+        return this.userService.deleteAll().pipe(
+          map(() => userActions.deleteAllSuccess()),
+          catchError(() => of(userActions.deleteAllFailure()))
+        );
+      })
+    );
+  });
+  setUsers$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.setUsers),
+      mergeMap((action) => {
+        return this.userService.setUsers(action.users).pipe(
+          map((users: User[]) => userActions.setUsersSuccess({users})),
+          catchError(() => of(userActions.setUsersFailure()))
+        );
+      })
+    );
+  });
+  deleteUser$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.deleteUser),
+      mergeMap((action) => {
+        return this.userService.deleteUser(action.id).pipe(
+          map((id: number) => userActions.deleteUserSuccess({id: action.id})),
+          catchError(() => of(userActions.deleteUserFailure()))
+        );
+      })
+    );
+  });
   loadUsers$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(userActions.loadUsers),

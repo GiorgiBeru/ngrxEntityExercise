@@ -18,12 +18,10 @@ export class UsersDashboardComponent implements OnInit {
   ngOnInit() {
     this.retrieveUsers();
     this.listenToRetrievedUsers();
-    // this.store.select(selectAllUsers).subscribe(x => console.log('user entities', x))
   }
 
   private retrieveUsers() {
     this.store.dispatch(userActions.loadUsers());
-    // this.http.get('http://localhost:4000/users').subscribe(x => console.log('get', x))
   }
   
   private listenToRetrievedUsers(){
@@ -39,10 +37,10 @@ export class UsersDashboardComponent implements OnInit {
   }
   public addOneUser(){
     const user: User = {
-      userId: "mypost1",
-      username: "mypost1",
-      email: "mypost1",
-      password: "mypost1"
+      userId: "mypost2",
+      username: "mypost2",
+      email: "mypost2",
+      password: "mypost2"
     }
     this.store.dispatch(userActions.addUser({user}))
   }
@@ -68,5 +66,75 @@ export class UsersDashboardComponent implements OnInit {
       },
     ];
     this.store.dispatch(userActions.addUsers({ users }));
+  }
+  public setOne(){
+    const user = {
+      id: 1,
+      userId: "setOneReplace",
+      username: "setOneReplace",
+      email: "setOneReplace",
+      password: "setOneReplace"
+    }
+    // const user = {
+    //   userId: 'addingThtoughSetOne',
+    //   username: 'addingThtoughSetOne',
+    //   email: 'addingThtoughSetOne',
+    //   password: 'addingThtoughSetOne',
+    // }
+    this.store.dispatch(userActions.setUser({ user }));
+  }
+  public setMany(){
+    const users = [{
+      id: 2,
+      userId: "setManyReplace",
+      username: "setManyReplace",
+      email: "setManyReplace",
+      password: "setManyReplace"
+    },
+    {
+      id: 3,
+      userId: "setManyReplace",
+      username: "setManyReplace",
+      email: "setManyReplace",
+      password: "setManyReplace"
+    },{
+      id: 4,
+      userId: "setManyReplace",
+      username: "setManyReplace",
+      email: "setManyReplace",
+      password: "setManyReplace"
+    }
+  ]
+  //   const users = [{
+  //     userId: "addingThroughMultipleReplace",
+  //     username: "addingThroughMultipleReplace",
+  //     email: "addingThroughMultipleReplace",
+  //     password: "addingThroughMultipleReplace"
+  //   },
+  //   {
+  //     userId: "addingThroughMultipleReplace",
+  //     username: "addingThroughMultipleReplace",
+  //     email: "addingThroughMultipleReplace",
+  //     password: "addingThroughMultipleReplace"
+  //   },{
+  //     userId: "addingThroughMultipleReplace",
+  //     username: "addingThroughMultipleReplace",
+  //     email: "addingThroughMultipleReplace",
+  //     password: "addingThroughMultipleReplace"
+  //   }
+  // ]
+
+    this.store.dispatch(userActions.setUsers({ users }));
+  }
+  public removeOne(){
+    const id = 9;
+    this.store.dispatch(userActions.deleteUser({ id }));
+  }
+  public removeMany(){
+    const ids = [11,12,13];
+    this.store.dispatch(userActions.deleteUsers({ ids }));
+  }
+  public removeAll(){
+    this.store.dispatch(userActions.deleteAll());
   }
 }

@@ -2,31 +2,31 @@
   "users": [
     {
       "id": 1,
-      "userId": "s164bde6b4-c3b4-4b96-9a02-c9a0d0345b89",
-      "username": "sa1Christina_Cronin",
-      "email": "s1Lucius.Bradtke17@yahoo.com",
-      "password": "s14trZBmdYIk0pht3"
+      "userId": "setOneReplace",
+      "username": "setOneReplace",
+      "email": "setOneReplace",
+      "password": "setOneReplace"
     },
     {
       "id": 2,
-      "userId": "s164bde6b4-c3b4-4b96-9a02-c9a0d0345b89",
-      "username": "sb1Christina_Cronin",
-      "email": "s1Lucius.Bradtke17@yahoo.com",
-      "password": "s14trZBmdYIk0pht3"
+      "userId": "setManyReplace",
+      "username": "setManyReplace",
+      "email": "setManyReplace",
+      "password": "setManyReplace"
     },
     {
       "id": 3,
-      "userId": "s164bde6b4-c3b4-4b96-9a02-c9a0d0345b89",
-      "username": "sc1Christina_Cronin",
-      "email": "s1Lucius.Bradtke17@yahoo.com",
-      "password": "s14trZBmdYIk0pht3"
+      "userId": "setManyReplace",
+      "username": "setManyReplace",
+      "email": "setManyReplace",
+      "password": "setManyReplace"
     },
     {
       "id": 4,
-      "userId": "s164bde6b4-c3b4-4b96-9a02-c9a0d0345b89",
-      "username": "sd1Christina_Cronin",
-      "email": "s1Lucius.Bradtke17@yahoo.com",
-      "password": "s14trZBmdYIk0pht3"
+      "userId": "setManyReplace",
+      "username": "setManyReplace",
+      "email": "setManyReplace",
+      "password": "setManyReplace"
     },
     {
       "id": 5,
@@ -370,6 +370,55 @@
       "email": "multiplepost",
       "password": "multiplepost",
       "id": 53
+    },
+    {
+      "userId": "multiplepost",
+      "username": "multiplepost",
+      "email": "multiplepost",
+      "password": "multiplepost",
+      "id": 54
+    },
+    {
+      "userId": "multiplepost",
+      "username": "multiplepost",
+      "email": "multiplepost",
+      "password": "multiplepost",
+      "id": 55
+    },
+    {
+      "userId": "multiplepost",
+      "username": "multiplepost",
+      "email": "multiplepost",
+      "password": "multiplepost",
+      "id": 56
+    },
+    {
+      "userId": "addingThtoughSetOne",
+      "username": "addingThtoughSetOne",
+      "email": "addingThtoughSetOne",
+      "password": "addingThtoughSetOne",
+      "id": 57
+    },
+    {
+      "userId": "addingThroughMultipleReplace",
+      "username": "addingThroughMultipleReplace",
+      "email": "addingThroughMultipleReplace",
+      "password": "addingThroughMultipleReplace",
+      "id": 58
+    },
+    {
+      "userId": "addingThroughMultipleReplace",
+      "username": "addingThroughMultipleReplace",
+      "email": "addingThroughMultipleReplace",
+      "password": "addingThroughMultipleReplace",
+      "id": 59
+    },
+    {
+      "userId": "addingThroughMultipleReplace",
+      "username": "addingThroughMultipleReplace",
+      "email": "addingThroughMultipleReplace",
+      "password": "addingThroughMultipleReplace",
+      "id": 60
     }
   ]
 }

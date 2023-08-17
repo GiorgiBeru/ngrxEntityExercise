@@ -2,12 +2,13 @@
     <div class="adders">
         <button (click)="addOneUser()" role="button" class="button green"> Add One </button>
         <button (click)="addManyUsers()" role="button" class="button green"> Add Many </button>
-        <button (click)="updateOneUser()" role="button" class="button green"> Add All </button>
+        <button (click)="setOne()" role="button" class="button green"> Set One </button>
+        <button (click)="setMany()" role="button" class="button green"> Set Many </button>
     </div>
     <div class="removers">
-        <button (click)="updateOneUser()" role="button" class="button red"> remove One </button>
-        <button (click)="updateOneUser()" role="button" class="button red"> remove Many </button>
-        <button (click)="updateOneUser()" role="button" class="button red"> remove All </button>
+        <button (click)="removeOne()" role="button" class="button red"> remove One </button>
+        <button (click)="removeMany()" role="button" class="button red"> remove Many </button>
+        <button (click)="removeAll()" role="button" class="button red"> remove All </button>
     </div>
     <div class="updaters">
         <button (click)="updateOneUser()" role="button" class="button yellow"> update One </button>
