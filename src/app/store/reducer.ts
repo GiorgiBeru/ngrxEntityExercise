@@ -54,6 +54,9 @@ export const usersReducer = createReducer(
   on(UserActions.deleteAllSuccess, (state, payload) => {
     return adapter.removeAll({ ...state, selectedUserId: null });
   }),
+  on(UserActions.updateUserSuccess, (state, payload) => {
+    return adapter.updateOne(payload.update, state);
+  }),
   on(UserActions.setUserId, (state, payload) => {
     return {
       ...state,

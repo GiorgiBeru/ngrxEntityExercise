@@ -25,7 +25,10 @@ export class UsersDashboardComponent implements OnInit {
   }
   
   private listenToRetrievedUsers(){
-    this.store.select(selectAllUsers).subscribe(x => this.employees = x);
+    this.store.select(selectAllUsers).subscribe(x => {
+      console.log('all users managed in state', x)
+      this.employees = x
+    });
   }
 
   public handleSelectedUser(user: any){
@@ -33,7 +36,7 @@ export class UsersDashboardComponent implements OnInit {
     this.router.navigate(['./', user.id.toString()], {relativeTo: this.route})
   }
   public updateOneUser(){
-    
+    this.store.dispatch(userActions.updateUser({update: {id: 36, changes: {username: 'blax'}}}))
   }
   public addOneUser(){
     const user: User = {

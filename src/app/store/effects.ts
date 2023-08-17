@@ -78,6 +78,17 @@ export class userEffects {
       })
     );
   });
+  updateUser$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.updateUser),
+      mergeMap((action) => {
+        return this.userService.updateUser(action.update).pipe(
+          map((users: User) => userActions.updateUserSuccess({update: action.update})),
+          catchError(() => of(userActions.updateUserFailure()))
+        );
+      })
+    );
+  });
   deleteUser$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(userActions.deleteUser),

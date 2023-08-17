@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +38,12 @@ export class UsersControllerService {
   }
   public deleteAll(){
     return this.http.delete(`${this.baseUrl}/all`);
+  }
+  public updateUser(user){
+     console.log(user, 'user');
+     return this.http.patch<User>(`${this.baseUrl}/${user.id}`, { username: user.changes['username'] });
+    //  return of(null)
+    // return this.http.patch(`${this.baseUrl}/all`);
   }
 
 

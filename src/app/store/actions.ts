@@ -37,9 +37,13 @@ export const deleteAll =  createAction('[User/API] Delete All Users');
 export const deleteAllSuccess =  createAction('[User/API] Delete All Users Success');
 export const deleteAllFailure =  createAction('[User/API] Delete All Users Failure');
 
+export const updateUser = createAction('[User/API] Update User', props<{ update: Update<User> }>());
+export const updateUserSuccess = createAction('[User/API] Update User Success', props<{ update: Update<User> }>());
+export const updateUserFailure = createAction('[User/API] Update User Failure');
+
+
 export const upsertUser = createAction('[User/API] Upsert User', props<{ user: User }>());
 export const upsertUsers = createAction('[User/API] Upsert Users', props<{ users: User[] }>());
-export const updateUser = createAction('[User/API] Update User', props<{ update: Update<User> }>());
 export const updateUsers = createAction('[User/API] Update Users', props<{ updates: Update<User>[] }>());
 export const mapUser = createAction('[User/API] Map User', props<{ entityMap: EntityMapOne<User> }>());
 export const mapUsers = createAction('[User/API] Map Users', props<{ entityMap: EntityMap<User> }>());
