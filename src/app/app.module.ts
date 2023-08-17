@@ -29,7 +29,7 @@ import { usersReducer } from './store/reducer';
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({user: usersReducer}),
+    StoreModule.forRoot({userReducer: usersReducer}),
     EffectsModule.forRoot([userEffects]),
   ],
   providers: [DatePipe],

@@ -23,6 +23,17 @@ export class userEffects {
       })
     );
   });
+  addUsers$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(userActions.addUsers),
+      mergeMap((action) => {
+        return this.userService.addMany(action.users).pipe(
+          map((users: User[]) => userActions.addUsersSuccess({users})),
+          catchError(() => of(userActions.addUsersFailure()))
+        );
+      })
+    );
+  });
   loadUsers$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(userActions.loadUsers),

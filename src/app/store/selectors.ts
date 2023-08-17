@@ -1,43 +1,30 @@
-// import {
-//     createSelector,
-//     createFeatureSelector,
-//     ActionReducerMap,
-//   } from '@ngrx/store';
-//   import * as fromUser from './reducer';
-  
-//   // export interface State {
-//   //   users: fromUser.State;
-//   // }
-  
-//   // export const reducers: ActionReducerMap<State> = {
-//   //   users: fromUser.usersReducer,
-//   // };
-  
-//   export const selectUserState = createFeatureSelector<fromUser.State>('userReducer');
-  
-//   // export const selectUserIds = createSelector(
-//   //   selectUserState,
-//   //   fromUser.selectUserIds // shorthand for usersState => fromUser.selectUserIds(usersState)
-//   // );
-//   // export const selectUserEntities = createSelector(
-//   //   selectUserState,
-//   //   fromUser.selectUserEntities
-//   // );
-//   export const selectAllUsers = createSelector(
-//     selectUserState,
-//     fromUser.selectAllUsers
-//   );
-//   // export const selectUserTotal = createSelector(
-//   //   selectUserState,
-//   //   fromUser.selectUserTotal
-//   // );
-//   // export const selectCurrentUserId = createSelector(
-//   //   selectUserState,
-//   //   fromUser.selectedUserId
-//   // );
-  
-//   // export const selectCurrentUser = createSelector(
-//   //   selectUserEntities,
-//   //   selectCurrentUserId,
-//   //   (userEntities, userId) => userId && userEntities[userId]
-//   // );
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import * as fromUser from './reducer';
+
+
+const {
+    selectIds,
+    selectEntities,
+    selectAll,
+    selectTotal,
+} = fromUser.adapter.getSelectors();
+
+export const selectUserState = createFeatureSelector<fromUser.State>(fromUser.userFeatureKey);
+
+export const selectAllUsers = createSelector(selectUserState, selectAll);
+
+export const selectUserEntities = createSelector(selectUserState, selectEntities);
+
+export const selectTotalUsers = createSelector(selectUserState, selectTotal);
+
+export const selectUserIds = createSelector(selectUserState, selectIds);
+
+export const selectCurrentUser = createSelector(
+    selectUserEntities,
+    createSelector(selectUserState, state => state.selectedUserId),
+    (userEntities, selectedUserId) => {
+        return selectedUserId ? userEntities[selectedUserId] : null;
+    }
+)
+
+export const selectCurrentUserSecondWay =  (id: number) => createSelector(selectUserEntities, entities => entities[id]);

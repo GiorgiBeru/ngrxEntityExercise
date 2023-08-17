@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "server": "json-server --watch ./server/db.json --port 4000",
+    "server": "node ./server/server.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -22,6 +22,7 @@
     "@ngrx/effects": "^16.2.0",
     "@ngrx/entity": "^16.2.0",
     "@ngrx/store": "^16.2.0",
+    "cors": "^2.8.5",
     "json-server": "^0.17.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

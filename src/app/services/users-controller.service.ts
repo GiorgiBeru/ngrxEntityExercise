@@ -17,25 +17,10 @@ export class UsersControllerService {
     this.http.get(`${this.baseUrl}/1`);
   }
   public addOne(user){
-    return this.http.post(this.baseUrl, {user})
+    return this.http.post(this.baseUrl, user)
   }
-  public addMany(){
-    const users = [{
-      userId: "multiplepost",
-      username: "multiplepost",
-      email: "multiplepost",
-      password: "multiplepost"
-    },{
-      userId: "multiplepost",
-      username: "multiplepost",
-      email: "multiplepost",
-      password: "multiplepost"
-    },{
-      userId: "multiplepost",
-      username: "multiplepost",
-      email: "multiplepost",
-      password: "multiplepost"
-    }];
-    this.http.post(this.baseUrl, {users})
+  public addMany(users){ 
+    console.log('users in service', users)
+    return this.http.post(`${this.baseUrl}/insert-users`, users)
   }
 }
