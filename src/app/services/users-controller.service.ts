@@ -13,38 +13,38 @@ export class UsersControllerService {
   public getAllUsers() {
     return this.http.get(this.baseUrl);
   }
+  
   public getOneUser() {
     this.http.get(`${this.baseUrl}/1`);
   }
+
   public addOne(user){
     return this.http.post(this.baseUrl, user)
   }
+
   public addMany(users){ 
     return this.http.post(`${this.baseUrl}/insert-users`, users)
   }
   public setUser(user){
-    return this.http.put(`${this.baseUrl}/${user.id}`, user)
-    // return this.addOne(user);
+    return user.id? this.http.put(`${this.baseUrl}/${user.id}`, user) : this.addOne(user);
   }
   public setUsers(users){
-    return this.http.put(`${this.baseUrl}/update-users`, users);
-    // return this.addMany(users);
+    return users.find(user => user.id)? this.http.put(`${this.baseUrl}/update-users`, users) : this.addMany(users);
   }
+
   public deleteUser(id){
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+
   public deleteUsers(ids){
     return this.http.delete(`${this.baseUrl}`, {body: ids});
   }
+
   public deleteAll(){
     return this.http.delete(`${this.baseUrl}/all`);
   }
+
   public updateUser(user){
-     console.log(user, 'user');
      return this.http.patch<User>(`${this.baseUrl}/${user.id}`, { username: user.changes['username'] });
-    //  return of(null)
-    // return this.http.patch(`${this.baseUrl}/all`);
   }
-
-
 }

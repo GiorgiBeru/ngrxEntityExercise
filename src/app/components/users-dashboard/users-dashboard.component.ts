@@ -11,9 +11,9 @@ import { selectAllUsers, selectUserEntities } from 'src/app/store/selectors';
   styleUrls: ['./users-dashboard.component.scss']
 })
 export class UsersDashboardComponent implements OnInit {
-  employees: any = [];
+  employees: User[] = [];
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private store:Store) {}
+  constructor(private router: Router, private route: ActivatedRoute, private store:Store) {}
 
   ngOnInit() {
     this.retrieveUsers();
@@ -26,27 +26,91 @@ export class UsersDashboardComponent implements OnInit {
   
   private listenToRetrievedUsers(){
     this.store.select(selectAllUsers).subscribe(x => {
-      console.log('all users managed in state', x)
       this.employees = x
     });
   }
 
-  public handleSelectedUser(user: any){
+  public handleSelectedUser(user: User){
     this.store.dispatch(userActions.setUserId({userId: user.id}))
     this.router.navigate(['./', user.id.toString()], {relativeTo: this.route})
   }
+
+  //UPDATE
   public updateOneUser(){
     this.store.dispatch(userActions.updateUser({update: {id: 36, changes: {username: 'blax'}}}))
   }
+  
+  public updateManyUsers() {
+    this.store.dispatch(userActions.updateUsers({updates: [{id: 40, changes: {username: 'blax1'}}, {id: 39, changes: {username: 'blax2'}}]}));
+  }
+  //UPSERT
+  public upsertOneUser(){
+    const user: User = {
+      id: 17,
+      userId: "upsertoneUPDATE",
+      username: "upsertoneUPDATE",
+    };
+    // const user: User = {
+    //   userId: "upsertoneADD",
+    //   username: "upsertoneADD",
+    //   email: "upsertoneADD",
+    //   password: "upsertoneADD"
+    // };
+    this.store.dispatch(userActions.upsertUser({user}))
+  }
+
+  public upsertManyUsers(){
+    // const users: User[] = [{
+    //   userId: "upsertManyUpdate",
+    //   username: "upsertManyUpdate",
+    //   email: "upsertManyUpdate",
+    //   password: "upsertManyUpdate"
+    // }, 
+    // {
+    //   userId: "upsertManyUpdate",
+    //   username: "upsertManyUpdate",
+    //   email: "upsertManyUpdate",
+    //   password: "upsertManyUpdate"
+    // },
+    // {
+    //   userId: "upsertManyUpdate",
+    //   username: "upsertManyUpdate",
+    //   email: "upsertManyUpdate",
+    //   password: "upsertManyUpdate"
+    // }];
+    const users: User[] = [{
+      userId: "upsertManyADD",
+      username: "upsertManyADD",
+      email: "upsertManyADD",
+      password: "upsertManyADD"
+    }, 
+    {
+      userId: "upsertManyADD",
+      username: "upsertManyADD",
+      email: "upsertManyADD",
+      password: "upsertManyADD"
+    },
+    {
+      userId: "upsertManyADD",
+      username: "upsertManyADD",
+      email: "upsertManyADD",
+      password: "upsertManyADD"
+    }
+  ];
+    this.store.dispatch(userActions.upsertUsers({users}))
+  }
+
+  //ADD
   public addOneUser(){
     const user: User = {
-      userId: "mypost2",
-      username: "mypost2",
-      email: "mypost2",
-      password: "mypost2"
+      userId: "mypost5",
+      username: "mypost5",
+      email: "mypost5",
+      password: "mypost5"
     }
     this.store.dispatch(userActions.addUser({user}))
   }
+
   public addManyUsers(){
     const users = [
       {
@@ -70,6 +134,8 @@ export class UsersDashboardComponent implements OnInit {
     ];
     this.store.dispatch(userActions.addUsers({ users }));
   }
+
+  //SET
   public setOne(){
     const user = {
       id: 1,
@@ -86,6 +152,7 @@ export class UsersDashboardComponent implements OnInit {
     // }
     this.store.dispatch(userActions.setUser({ user }));
   }
+
   public setMany(){
     const users = [{
       id: 2,
@@ -129,6 +196,8 @@ export class UsersDashboardComponent implements OnInit {
 
     this.store.dispatch(userActions.setUsers({ users }));
   }
+
+  //REMOVE
   public removeOne(){
     const id = 9;
     this.store.dispatch(userActions.deleteUser({ id }));

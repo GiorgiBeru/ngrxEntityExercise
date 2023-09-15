@@ -19,7 +19,7 @@ export class UserFormComponent implements OnInit {
     username: ['', Validators.required],
     email: [''],
     password: [''],
-  });;
+  });
   selectedUser: any;
   unsubscribe$ = new Subject<void>();
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private store: Store) {}

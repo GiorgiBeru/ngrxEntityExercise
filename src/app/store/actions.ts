@@ -36,16 +36,17 @@ export const deleteUsersFailure = createAction('[User/API] Delete Users Failure'
 export const deleteAll =  createAction('[User/API] Delete All Users');
 export const deleteAllSuccess =  createAction('[User/API] Delete All Users Success');
 export const deleteAllFailure =  createAction('[User/API] Delete All Users Failure');
-
+//updateUser - Update User entity or some properties of the user entity in the collection
 export const updateUser = createAction('[User/API] Update User', props<{ update: Update<User> }>());
 export const updateUserSuccess = createAction('[User/API] Update User Success', props<{ update: Update<User> }>());
 export const updateUserFailure = createAction('[User/API] Update User Failure');
-
-
-export const upsertUser = createAction('[User/API] Upsert User', props<{ user: User }>());
-export const upsertUsers = createAction('[User/API] Upsert Users', props<{ users: User[] }>());
+//updateUsers - Update Users or some properties of the user entities in the collection
 export const updateUsers = createAction('[User/API] Update Users', props<{ updates: Update<User>[] }>());
+//upsertUser - update or insert (includes partial updates) 
+export const upsertUser = createAction('[User/API] Upsert User', props<{ user: User }>());
+//upsertUsers - update or insert (includes partial updates) 
+export const upsertUsers = createAction('[User/API] Upsert Users', props<{ users: User[] }>());
+
 export const mapUser = createAction('[User/API] Map User', props<{ entityMap: EntityMapOne<User> }>());
 export const mapUsers = createAction('[User/API] Map Users', props<{ entityMap: EntityMap<User> }>());
 export const deleteUsersByPredicate = createAction('[User/API] Delete Users By Predicate', props<{ predicate: Predicate<User> }>());
-export const clearUsers = createAction('[User/API] Clear Users');

@@ -31,7 +31,6 @@ export const usersReducer = createReducer(
     return adapter.addOne(payload.user, state)
   }),
   on(UserActions.addUsersSuccess, (state, payload) => {
-    console.log('add users post req response,', payload.users);
     return adapter.addMany(payload.users, state)
   }),
   on(UserActions.loadUsersSuccess, (state, payload) => {
@@ -44,11 +43,9 @@ export const usersReducer = createReducer(
     return adapter.setMany(payload.users, state)
   }),
   on(UserActions.deleteUserSuccess, (state, payload) => {
-    console.log('one id', payload.id)
     return adapter.removeOne(payload.id, state)
   }),
   on(UserActions.deleteUsersSuccess, (state, payload) => {
-    console.log(payload.ids, 'ids')
     return adapter.removeMany(payload.ids, state)
   }),
   on(UserActions.deleteAllSuccess, (state, payload) => {
@@ -56,6 +53,15 @@ export const usersReducer = createReducer(
   }),
   on(UserActions.updateUserSuccess, (state, payload) => {
     return adapter.updateOne(payload.update, state);
+  }),
+  on(UserActions.updateUsers, (state, payload) => {
+    return adapter.updateMany(payload.updates, state);
+  }),
+  on(UserActions.upsertUser, (state, payload) => {
+    return adapter.upsertOne(payload.user, state);
+  }),
+  on(UserActions.upsertUsers, (state, payload) => {
+    return adapter.upsertMany(payload.users, state);
   }),
   on(UserActions.setUserId, (state, payload) => {
     return {

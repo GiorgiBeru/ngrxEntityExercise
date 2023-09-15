@@ -33,7 +33,6 @@ server.put('/users/update-users', (req, res) => {
   if (!Array.isArray(req.body)) {
     return res.status(400).json({ error: 'Request body must be an array' });
   }
-  console.log('bla')
   const users = req.body;
   const db = router.db; // Get a reference to the database
   
@@ -50,9 +49,9 @@ server.put('/users/update-users', (req, res) => {
   
   res.status(200).json(updatedUsers);
 });
+
 server.delete('/users/all', (req, res) => {
   const db = router.db;
-  console.log('shemodis')
   db.get('users').remove().write();
 
   res.status(204).send(); // 204 No Content
