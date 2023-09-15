@@ -46,7 +46,3 @@ export const updateUsers = createAction('[User/API] Update Users', props<{ updat
 export const upsertUser = createAction('[User/API] Upsert User', props<{ user: User }>());
 //upsertUsers - update or insert (includes partial updates) 
 export const upsertUsers = createAction('[User/API] Upsert Users', props<{ users: User[] }>());
-
-export const mapUser = createAction('[User/API] Map User', props<{ entityMap: EntityMapOne<User> }>());
-export const mapUsers = createAction('[User/API] Map Users', props<{ entityMap: EntityMap<User> }>());
-export const deleteUsersByPredicate = createAction('[User/API] Delete Users By Predicate', props<{ predicate: Predicate<User> }>());

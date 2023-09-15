@@ -37,64 +37,41 @@ export class UsersDashboardComponent implements OnInit {
 
   //UPDATE
   public updateOneUser(){
-    this.store.dispatch(userActions.updateUser({update: {id: 36, changes: {username: 'blax'}}}))
+    this.store.dispatch(userActions.updateUser({update: {id: 36, changes: {username: 'bla'}}}))
   }
   
   public updateManyUsers() {
-    this.store.dispatch(userActions.updateUsers({updates: [{id: 40, changes: {username: 'blax1'}}, {id: 39, changes: {username: 'blax2'}}]}));
+    this.store.dispatch(userActions.updateUsers({updates: [{id: 40, changes: {username: 'blabla1'}}, {id: 39, changes: {username: 'blabla2'}}]}));
   }
   //UPSERT
   public upsertOneUser(){
     const user: User = {
       id: 17,
-      userId: "upsertoneUPDATE",
-      username: "upsertoneUPDATE",
+      userId: "upsertoneUPDATEPRESENTATION",
+      username: "upsertoneUPDATEPRESENTATION",
+      password: 'upsertoneUPDATEPRESENTATION'
     };
-    // const user: User = {
-    //   userId: "upsertoneADD",
-    //   username: "upsertoneADD",
-    //   email: "upsertoneADD",
-    //   password: "upsertoneADD"
-    // };
     this.store.dispatch(userActions.upsertUser({user}))
   }
 
   public upsertManyUsers(){
-    // const users: User[] = [{
-    //   userId: "upsertManyUpdate",
-    //   username: "upsertManyUpdate",
-    //   email: "upsertManyUpdate",
-    //   password: "upsertManyUpdate"
-    // }, 
-    // {
-    //   userId: "upsertManyUpdate",
-    //   username: "upsertManyUpdate",
-    //   email: "upsertManyUpdate",
-    //   password: "upsertManyUpdate"
-    // },
-    // {
-    //   userId: "upsertManyUpdate",
-    //   username: "upsertManyUpdate",
-    //   email: "upsertManyUpdate",
-    //   password: "upsertManyUpdate"
-    // }];
     const users: User[] = [{
-      userId: "upsertManyADD",
-      username: "upsertManyADD",
-      email: "upsertManyADD",
-      password: "upsertManyADD"
+      userId: "upsertManyADDPRESENTATION",
+      username: "upsertManyADDPRESENTATION",
+      email: "upsertManyADDPRESENTATION",
+      password: "upsertManyADDPRESENTATION"
     }, 
     {
-      userId: "upsertManyADD",
-      username: "upsertManyADD",
-      email: "upsertManyADD",
-      password: "upsertManyADD"
+      userId: "upsertManyADDPRESENTATION",
+      username: "upsertManyADDPRESENTATION",
+      email: "upsertManyADDPRESENTATION",
+      password: "upsertManyADDPRESENTATION"
     },
     {
-      userId: "upsertManyADD",
-      username: "upsertManyADD",
-      email: "upsertManyADD",
-      password: "upsertManyADD"
+      userId: "upsertManyADDPRESENTATION",
+      username: "upsertManyADDPRESENTATION",
+      email: "upsertManyADDPRESENTATION",
+      password: "upsertManyADDPRESENTATION"
     }
   ];
     this.store.dispatch(userActions.upsertUsers({users}))
@@ -103,10 +80,10 @@ export class UsersDashboardComponent implements OnInit {
   //ADD
   public addOneUser(){
     const user: User = {
-      userId: "mypost5",
-      username: "mypost5",
-      email: "mypost5",
-      password: "mypost5"
+      userId: "addOnePRESENTATION",
+      username: "addOnePRESENTATION",
+      email: "addOnePRESENTATION",
+      password: "addOnePRESENTATION"
     }
     this.store.dispatch(userActions.addUser({user}))
   }
@@ -114,22 +91,22 @@ export class UsersDashboardComponent implements OnInit {
   public addManyUsers(){
     const users = [
       {
-        userId: 'multiplepost',
-        username: 'multiplepost',
-        email: 'multiplepost',
-        password: 'multiplepost',
+        userId: 'addMultiplePRESENTATION',
+        username: 'addMultiplePRESENTATION',
+        email: 'addMultiplePRESENTATION',
+        password: 'addMultiplePRESENTATION',
       },
       {
-        userId: 'multiplepost',
-        username: 'multiplepost',
-        email: 'multiplepost',
-        password: 'multiplepost',
+        userId: 'addMultiplePRESENTATION',
+        username: 'addMultiplePRESENTATION',
+        email: 'addMultiplePRESENTATION',
+        password: 'addMultiplePRESENTATION',
       },
       {
-        userId: 'multiplepost',
-        username: 'multiplepost',
-        email: 'multiplepost',
-        password: 'multiplepost',
+        userId: 'addMultiplePRESENTATION',
+        username: 'addMultiplePRESENTATION',
+        email: 'addMultiplePRESENTATION',
+        password: 'addMultiplePRESENTATION',
       },
     ];
     this.store.dispatch(userActions.addUsers({ users }));
@@ -138,61 +115,36 @@ export class UsersDashboardComponent implements OnInit {
   //SET
   public setOne(){
     const user = {
-      id: 1,
-      userId: "setOneReplace",
-      username: "setOneReplace",
-      email: "setOneReplace",
-      password: "setOneReplace"
+      userId: 'addingThtoughSetOnePRESENTATION',
+      username: 'addingThtoughSetOnePRESENTATION',
+      email: 'addingThtoughSetOnePRESENTATION',
+      password: 'addingThtoughSetOnePRESENTATION',
     }
-    // const user = {
-    //   userId: 'addingThtoughSetOne',
-    //   username: 'addingThtoughSetOne',
-    //   email: 'addingThtoughSetOne',
-    //   password: 'addingThtoughSetOne',
-    // }
     this.store.dispatch(userActions.setUser({ user }));
   }
 
   public setMany(){
     const users = [{
       id: 2,
-      userId: "setManyReplace",
-      username: "setManyReplace",
-      email: "setManyReplace",
-      password: "setManyReplace"
+      userId: "setManyReplacePRESENTATION",
+      username: "setManyReplacePRESENTATION",
+      email: "setManyReplacePRESENTATION",
+      password: "setManyReplacePRESENTATION"
     },
     {
       id: 3,
-      userId: "setManyReplace",
-      username: "setManyReplace",
-      email: "setManyReplace",
-      password: "setManyReplace"
+      userId: "setManyReplacePRESENTATION",
+      username: "setManyReplacePRESENTATION",
+      email: "setManyReplacePRESENTATION",
+      password: "setManyReplacePRESENTATION"
     },{
       id: 4,
-      userId: "setManyReplace",
-      username: "setManyReplace",
-      email: "setManyReplace",
-      password: "setManyReplace"
+      userId: "setManyReplacePRESENTATION",
+      username: "setManyReplacePRESENTATION",
+      email: "setManyReplacePRESENTATION",
+      password: "setManyReplacePRESENTATION"
     }
   ]
-  //   const users = [{
-  //     userId: "addingThroughMultipleReplace",
-  //     username: "addingThroughMultipleReplace",
-  //     email: "addingThroughMultipleReplace",
-  //     password: "addingThroughMultipleReplace"
-  //   },
-  //   {
-  //     userId: "addingThroughMultipleReplace",
-  //     username: "addingThroughMultipleReplace",
-  //     email: "addingThroughMultipleReplace",
-  //     password: "addingThroughMultipleReplace"
-  //   },{
-  //     userId: "addingThroughMultipleReplace",
-  //     username: "addingThroughMultipleReplace",
-  //     email: "addingThroughMultipleReplace",
-  //     password: "addingThroughMultipleReplace"
-  //   }
-  // ]
 
     this.store.dispatch(userActions.setUsers({ users }));
   }

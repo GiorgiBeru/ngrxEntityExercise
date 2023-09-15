@@ -9,24 +9,24 @@
     },
     {
       "id": 2,
-      "userId": "setManyReplace",
-      "username": "setManyReplace",
-      "email": "setManyReplace",
-      "password": "setManyReplace"
+      "userId": "setManyReplacetest",
+      "username": "setManyReplacetest",
+      "email": "setManyReplacetest",
+      "password": "setManyReplacetest"
     },
     {
       "id": 3,
-      "userId": "setManyReplace",
-      "username": "setManyReplace",
-      "email": "setManyReplace",
-      "password": "setManyReplace"
+      "userId": "setManyReplacetest",
+      "username": "setManyReplacetest",
+      "email": "setManyReplacetest",
+      "password": "setManyReplacetest"
     },
     {
       "id": 4,
-      "userId": "setManyReplace",
-      "username": "setManyReplace",
-      "email": "setManyReplace",
-      "password": "setManyReplace"
+      "userId": "setManyReplacetest",
+      "username": "setManyReplacetest",
+      "email": "setManyReplacetest",
+      "password": "setManyReplacetest"
     },
     {
       "id": 5,
@@ -475,6 +475,48 @@
       "email": "mypost5",
       "password": "mypost5",
       "id": 68
+    },
+    {
+      "userId": "addOneTest",
+      "username": "addOneTest",
+      "email": "addOneTest",
+      "password": "addOneTest",
+      "id": 69
+    },
+    {
+      "userId": "addMultipletest",
+      "username": "addMultipletest",
+      "email": "addMultipletest",
+      "password": "addMultipletest",
+      "id": 70
+    },
+    {
+      "userId": "addMultipletest",
+      "username": "addMultipletest",
+      "email": "addMultipletest",
+      "password": "addMultipletest",
+      "id": 71
+    },
+    {
+      "userId": "addMultipletest",
+      "username": "addMultipletest",
+      "email": "addMultipletest",
+      "password": "addMultipletest",
+      "id": 72
+    },
+    {
+      "userId": "addOnePRESENTATION",
+      "username": "addOnePRESENTATION",
+      "email": "addOnePRESENTATION",
+      "password": "addOnePRESENTATION",
+      "id": 73
+    },
+    {
+      "userId": "addingThtoughSetOnet",
+      "username": "addingThtoughSetOnet",
+      "email": "addingThtoughSetOnet",
+      "password": "addingThtoughSetOnet",
+      "id": 74
     }
   ]
 }
